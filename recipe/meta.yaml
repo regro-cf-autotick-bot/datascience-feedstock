@@ -1,5 +1,5 @@
 {% set name = "datascience" %}
-{% set version = "0.17.5" %}
+{% set version = "0.17.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/datascience-{{ version }}.tar.gz
-  sha256: 2221cc873685158d028525617a4fda4cbacfe6ee49992f5fde29517d2fc9c61f
+  sha256: 5911f3f3e7c6fb71a2a6c3330170b70d318db012ca3f6c17313bf589624801dd
 
 build:
   noarch: python
