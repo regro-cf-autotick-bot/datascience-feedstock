@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/datascience-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/datascience-{{ version }}.tar.gz
   sha256: 5911f3f3e7c6fb71a2a6c3330170b70d318db012ca3f6c17313bf589624801dd
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pytest
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - folium >=0.9.1
     - setuptools
     - matplotlib-base >=3.0.0
@@ -38,6 +38,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/data-8/datascience
